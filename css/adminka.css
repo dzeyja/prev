@@ -1,0 +1,124 @@
+.container {
+  max-width: 1300px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.tovary {
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px #000 solid;
+  color: red;
+  text-align: center;
+  font-size: 20px;
+}
+/* Стиль вкладок  начало*/
+#table1 {
+  display: none;  
+}
+
+#table1 thead tr th {
+  padding: 20px 25px;
+  border: 2px solid #000;
+}
+
+#table1 tbody tr td {
+  border: 1px solid #000;
+}
+
+#table1 thead tr th a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+}
+
+.table td, .table th {
+  padding: 6px 5px; 
+  text-align: center;
+}
+
+#table2 {
+  display: none;
+}
+
+#table3 {
+  display: none;
+}
+
+#table4 {
+  display: none;
+}
+.button-container {
+  text-align: center;
+  padding-top: 3%;
+}
+
+.btn_test {
+  width: 200px;
+  height: 40px;
+  background-color: #032539;
+  color: white;
+  margin: 5px;
+}
+
+.my-table-class {
+    width: 300px;
+    border-collapse: collapse;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.my-table-class th, 
+.my-table-class td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.my-table-class th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.my-table-class tr:hover {
+    background-color: #e5eaf5
+}
+#table1 tbody tr[data-selected="true"] {
+background-color: #6608a1;
+}
+
+#table1 table thead tr th:nth-child(10){
+width: 400px !important;
+overflow-wrap: anywhere !important;
+}
+
+#table1 th[data-sort-key= "Статус формы"] {
+   width: 300px !important;
+}
+
+.btn_test.active {
+  background-color: #007bff; /* Background color of the active tab */
+  color: #fff; /* Text color of the active tab */
+  font-weight: bold; /* Optional: make the active tab text bold */
+}
+
+/* Стиль вкладок конец*/

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./css/adminka.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./img/9f0f3ef38d7e8ce9eda824740fc915d0-removebg-preview.png">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="./js/config.js"></script>
+  </head>
+  <body>
+    <div class="button-container">
+      <button id="setTable1" class="btn_test active">Запрещенные</button>
+      <button id="setTable2" class="btn_test">Разрешенные</button>
+      <button id="setTable3" class="btn_test">На рассмотрении</button>
+      <button id="setTable4" class="btn_test">Все</button>
+    </div>
+
+    <div class="container">
+      <h1>Добавить товар</h1>
+      <form action="">
+        <input placeholder="Название продукта" type="text" id="product_name" />
+        <input
+          placeholder="Описание продукта"
+          type="text"
+          id="product_suptitle"
+        />
+        <input placeholder="Цена продукта" type="number" id="product_price" />
+        <select name="product_category" id="category"></select>
+        Изображение продукта: <input type="file" name="product_image" id="product_picture"/>
+        <input type="submit" id="add_item_btn" value="Добавить товар" />
+      </form>
+
+      <h1>Добавить категорию</h1>
+      <form action="">
+        <input
+          placeholder="Название категории"
+          type="text"
+          id="product_category"
+        />
+        <input type="button" value="Добавить категорию" id="add_category_btn"/>
+      </form>
+
+      <h1>Продукты</h1>
+      <div class="tovary">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Название продукта</th>
+                <th>Изображение продукта</th>
+                <th>Описание продукта</th>
+                <th>Цена</th>
+                <th>Категория</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="items_body"></tbody>
+        </table>
+      </div>
+
+      <h1>Kатегории</h1>
+      <div class="tovary">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Название категории</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="categories_body"></tbody>
+        </table>
+      </div>
+
+      <h1>Заказы</h1>
+      <div class="tovary">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Название категории</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id=""></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./js/items_list.js"></script>
+  </body>
+</html>
+
+        

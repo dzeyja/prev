@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provence</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./img/9f0f3ef38d7e8ce9eda824740fc915d0-removebg-preview.png"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/menu.js"></script>
+  </head>
+  <body>
+    <!--Шапка-->
+    <div class="spinner"></div>
+    <header class="header">
+      <div class="container">
+        <div class="header-nav">
+          <div class="logo">
+            <a href="./index.html">Provence</a>
+          </div>
+
+          <div data-time-btn class="work-time">09:00-23-00</div>
+
+          <!--Модальное окно, открывается при клике-->
+          <div data-modal-time class="fade-block hidden">
+            <div class="modal-window">
+              <div class="time">
+                <button data-close-time class="time-close" type="button">
+                  <img src="./img/icons8-закрыть-24.png" alt="" />
+                </button>
+                <div class="time-title">Время работы</div>
+                <div class="time-watch">Пн 09:00 − 23:00</div>
+                <div class="time-watch">Вт 09:00 − 23:00</div>
+                <div class="time-watch">Ср 09:00 − 23:00</div>
+                <div class="time-watch">Чт 09:00 − 23:00</div>
+                <div class="time-watch">Пт 09:00 − 23:00</div>
+                <div class="time-watch">Вс 09:00 − 23:00</div>
+              </div>
+            </div>
+          </div>
+
+          <div data-modal-busket-btn class="basket"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!--Навигация-->
+      <nav class="nav">
+        <ul class="nav-list" id="category_ul">
+          <li class="nav-item">
+            <a href="./info-cafe.html">
+              <div class="link-btn">О нас</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper" id="swiper-container">
+        <div class="swiper-slide">
+          <a class="link-btn" href="./info-cafe.html">О нас</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="container" id="container"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer-title">Контакты</div>
+          <ul class="social">
+            <li class="social__item">
+              <a href="https://api.whatsapp.com/send?phone=+7 776 459 4430"
+                ><img src="./img/icons8-whatsapp-100.png" alt="Link"
+              /></a>
+            </li>
+
+            <li class="social__item">
+              <a href=""
+                ><img src="./img/./icons8-instagram-100.png" alt="Link"
+              /></a>
+            </li>
+          </ul>
+
+          <div class="copyright">
+            <p>© 2023 Provence</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css" />
+
+    <div class="smart-basket__wrapper"></div>
+
+    <script src="./js/stop-menu.js"></script>
+    <script src="./smartbasket/js/smartbasket.min.js"></script>
+
+    <script>
+      function loader() {
+        var container_9 = document.getElementById("container_9");
+        if (container_9 === null) {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("body").style.backgroundImage = "none";
+          document.querySelector(".spinner").style.visibility = "visible";
+          console.log("loader");
+          setTimeout(function () {
+            loader();
+          }, 1000);
+        } else {
+          document.querySelector(".spinner").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+          document.querySelector("body").style.backgroundImage = "";
+          console.log("body");
+        }
+      }
+      loader();
+
+      document.addEventListener("ItemsReady", function () {
+        $(function () {
+          $(".smart-basket__wrapper").smbasket({
+            productElement: "card-modal",
+            buttonAddToBasket: "modal-btn",
+            productPrice: "product__price-number",
+            productSize: "product__size-element",
+
+            productQuantityWrapper: "product__quantity",
+            smartBasketMinArea: "basket",
+            countryCode: "+7",
+            smartBasketCurrency: "₸",
+            smartBasketMinIconPath:
+              "./smartbasket/img/shopping-basket-wight.svg",
+
+            agreement: {
+              isRequired: true,
+              isChecked: true,
+              isLink: "https://artstranger.ru/privacy.html",
+            },
+            nameIsRequired: false,
+          });
+          setTimeout(function () {
+            var itemsReady = new Event("basketready");
+            document.dispatchEvent(itemsReady);
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>
